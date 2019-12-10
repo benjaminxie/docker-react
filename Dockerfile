@@ -6,4 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+#EXPOSE actually does something on AWS
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
